@@ -80,7 +80,7 @@ def stream2word(data, current):
         if j >= len(data):
             j = 0
             
-        temp = (temp << 8) | data[j];
+        temp = ((temp << 8) | data[j]) & 0xFFFFFFFF;
         j+=1
     
     return (temp, j);
